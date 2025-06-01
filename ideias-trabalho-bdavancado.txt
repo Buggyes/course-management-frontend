@@ -1,0 +1,42 @@
+tela inicial (login):
+    campo de usuario
+    campo de senha
+
+tela principal:
+    taskbar header:
+        ter cada área separada (ao clicar, você vê os cursos dessa área)
+        do lado direito, tem o usuario e sua foto
+            - se clicar, aparece sua foto, banner, nome, e opção de sair
+    banner da área logo abaixo do header
+    cursos mostrados em forma de grid de 3-4 colunas
+
+curso:
+    aparece um card ao clicar
+        tem o banner do curso
+        o titulo do curso
+        o instrutor do curso logo abaixo
+            Ao clicar no instrutor:
+                aparece o banner do perfil dele
+                a foto dele
+                a biografia dele
+                as áreas de atuação dele
+        a descrição do curso
+        um vídeo de demonstração do curso
+        um botão para se inscrever no curso
+
+se você for um administrador:
+    você pode administrar instrutores:
+        você cadastra o nome de login do instrutor
+        e digita uma senha pra ele
+        você também pode excluir um instrutor
+        você consegue ver o perfil do instrutor também
+
+    você pode administrar cursos:
+        você pode aprovar ou rejeitar um curso que um instrutor cria
+        você pode apagar cursos que foram rejeitados
+
+se você for um instrutor:
+    você pode alterar seu perfil
+        foto, biografia, área de atuação etc.
+    você pode criar cursos
+    você pode apagar cursos que foram rejeitados
