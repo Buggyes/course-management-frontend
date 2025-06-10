@@ -3,9 +3,11 @@
 </script>
 
 <template>
-<div></div>
+<header>oi</header>
 </template>
 
 <style lang="css" scoped>
-
+header {
+    background-color: black;
+}
 </style>

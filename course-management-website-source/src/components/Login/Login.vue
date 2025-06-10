@@ -1,16 +1,17 @@
 <script setup>
     import { ref } from "vue";
     import { useRouter } from 'vue-router'
+    import login_user from '../API/UserAPI'
     
     const router = useRouter()
 
     const username = ref('');
     const password = ref('');
     
-    function login() {
-        console.log(username.value)
-        console.log(password.value)
-        router.push({name:"MainPage"})
+    async function login() {
+        let result = await login_user(username.value, password.value)
+        if(typeof result !== 'object')
+            router.push({name:"MainPage"})
     }
 </script>
 
