@@ -21,22 +21,14 @@ curso:
                 a biografia dele
                 as áreas de atuação dele
         a descrição do curso
-        um vídeo de demonstração do curso
         um botão para se inscrever no curso
 
 se você for um administrador:
     você pode administrar instrutores:
-        você cadastra o nome de login do instrutor
-        e digita uma senha pra ele
+        você cadastra o instrutor
         você também pode excluir um instrutor
         você consegue ver o perfil do instrutor também
 
     você pode administrar cursos:
         você pode aprovar ou rejeitar um curso que um instrutor cria
         você pode apagar cursos que foram rejeitados
-
-se você for um instrutor:
-    você pode alterar seu perfil
-        foto, biografia, área de atuação etc.
-    você pode criar cursos
-    você pode apagar cursos que foram rejeitados
