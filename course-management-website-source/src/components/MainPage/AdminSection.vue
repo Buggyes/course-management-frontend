@@ -8,49 +8,58 @@ const courses = ref([])
 const instructors = ref([])
 
 watch(() => props.administering, async (newAdministering, oldAdministering) => {
-    if(newAdministering) {
-        const fetchedCourses = await get_courses();
-        courses.value = fetchedCourses;
-        const fetchedInstructors = await get_instructors();
-        instructors.value = fetchedInstructors;
+    if (newAdministering) {
+        try {
+            const fetchedCourses = await get_courses();
+            courses.value = fetchedCourses;
+            const fetchedInstructors = await get_instructors();
+            instructors.value = fetchedInstructors;
+        } catch (err) {
+            console.log("failed to fetch from database")
+        }
     }
-}, {immediate: true})
+}, { immediate: true })
 
 </script>
 
 <template>
-    <div style="margin-top: 20px;" v-if="administering">
-        <button class="create-button">Cadastrar Curso</button>
-        <button class="create-button">Cadastrar Instrutor</button>
-    </div>
-    <div style="display: flex; margin-top: 10px;" v-if="administering">
-        <div class="table-container">
-            <span>Cursos</span>
-            <table>
-                <tr>
-                    <th>Nome</th>
-                    <th>Instrutor</th>
-                    <th>Descrição</th>
-                    <th>Banner</th>
-                </tr>
-                <tr>
-
-                </tr>
-            </table>
+    <div v-if="administering">
+        <div style="margin-top: 20px;">
+            <button class="create-button">Cadastrar Curso</button>
+            <button class="create-button">Cadastrar Instrutor</button>
         </div>
-        <div class="table-container">
-            <span>Instrutores</span>
-            <table>
-                <tr>
-                    <th></th> <!-- foto -->
-                    <th>Nome</th>
-                    <th>Biografia</th>
-                    <th>Banner</th>
-                </tr>
-                <tr>
+        <div style="margin-top: 20px;">
 
-                </tr>
-            </table>
+        </div>
+        <div style="display: flex; margin-top: 10px;">
+            <div class="table-container">
+                <span>Cursos</span>
+                <table>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Instrutor</th>
+                        <th>Descrição</th>
+                        <th>Banner</th>
+                    </tr>
+                    <tr>
+
+                    </tr>
+                </table>
+            </div>
+            <div class="table-container">
+                <span>Instrutores</span>
+                <table>
+                    <tr>
+                        <th></th> <!-- foto -->
+                        <th>Nome</th>
+                        <th>Biografia</th>
+                        <th>Banner</th>
+                    </tr>
+                    <tr>
+
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 </template>

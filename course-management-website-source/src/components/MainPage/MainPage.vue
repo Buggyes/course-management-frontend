@@ -47,6 +47,7 @@ header {
 }
 
 .title-container {
+    margin-top: 20px;
     margin-left: 20%;
     display: flex;
     font-size: 150%;
