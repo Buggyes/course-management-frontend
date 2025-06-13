@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import get_areas from '../API/AreaAPI';
+import AdminSection from './AdminSection.vue';
 
 const areas = ref([]);
 const administering = ref(false);
@@ -37,6 +38,7 @@ onMounted(async () => {
         <span>Você está na área de...</span>
         <h1>{{ currentArea }}</h1>
     </div>
+    <AdminSection :administering="administering.valueOf()"/>
 </template>
 
 <style scoped>
