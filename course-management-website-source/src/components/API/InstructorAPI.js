@@ -29,3 +29,16 @@ export async function post_instructor(instrFormData) {
         console.log(error)
     }
 }
+
+export async function delete_instructor(id) {
+    let url = baseURL + 'instructor/'+id
+    try {
+        const response = await fetch(url,
+            {
+                method: "DELETE",
+            })
+        return response.json()
+    } catch (error) {
+        console.log(error)
+    }
+}
