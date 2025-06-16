@@ -110,8 +110,8 @@ async function registerInstructor() {
         });
         post_instructor(formData).then(async () => {
             instructors.value = await get_instructors();
+            closeInstrForm()
         })
-        closeInstrForm()
     }
 }
 
@@ -132,8 +132,8 @@ async function registerCourse() {
     }
     post_course(formData).then(async () => {
         courses.value = await get_courses();
+        closeCourseForm()
     })
-    closeCourseForm()
 }
 
 async function deleteInstructor(id) {
@@ -157,7 +157,6 @@ function resetCourseForm() {
         area_id: null,
         bannerFile: null
     };
-
     const bannerInput = document.getElementById("courseBanner");
     if (bannerInput) bannerInput.value = "";
 }
@@ -269,8 +268,8 @@ function closeInstrForm() {
                         <td><img class="table-banner" :src="i.banner" alt="banner"></td>
                         <td>{{ i.name }}</td>
                         <td>{{ i.description }}</td>
-                        <td>{{ instructors.at(i.instructor_id)?.name }}</td>
-                        <td>{{ areas.at(i.area_id)?.name }}</td>
+                        <td>{{ instructors.find(instr => instr.id === i.instructor)?.name }}</td>
+                        <td>{{ areas.find(area => area.id === i.area)?.name }}</td>
                         <td><button @click="deleteCourse(i.id)">Excluir</button></td>
                     </tr>
                 </table>

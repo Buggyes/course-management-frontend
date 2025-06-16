@@ -60,23 +60,25 @@ onMounted(async () => {
             <span>Você está na área de...</span>
             <h1>{{ currentArea }}</h1>
         </div>
-        <div class="course-container" v-for="course in courses" :key="course.id">
-            <div class="course-card">
-                <table>
-                    <tr>
-                        <td><img class="course-banner" :src="course.banner" alt="banner"></td>
-                    </tr>
-                    <tr>
-                        <td><span>{{ course.name }}</span></td>
-                    </tr>
-                    <tr>
-                        <td><span>{{ course.description }}</span></td>
-                    </tr>
-                    <tr>
-                        <td><img class="instructor-pfp" :src="instructors.at(course.instructor_id)?.pfp"><span>{{
-                            instructors.at(course.instructor_id)?.name }}</span></td>
-                    </tr>
-                </table>
+        <div class="course-container">
+            <div v-for="course in courses" :key="course.id">
+                <div class="course-card">
+                    <table>
+                        <tr>
+                            <td><img class="course-banner" :src="course.banner" alt="banner"></td>
+                        </tr>
+                        <tr>
+                            <td><span>{{ course.name }}</span></td>
+                        </tr>
+                        <tr>
+                            <td><span>{{ course.description }}</span></td>
+                        </tr>
+                        <tr>
+                            <td><img class="instructor-pfp" :src="instructors.at(course.instructor_id)?.pfp"><span>{{
+                                instructors.at(course.instructor_id)?.name }}</span></td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -138,6 +140,7 @@ td {
 }
 
 .course-card {
+    margin: 10px;
     background-color: rgba(134, 172, 255, 0.425);
     padding-bottom: 10px;
 }
