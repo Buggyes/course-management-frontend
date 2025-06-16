@@ -10,7 +10,7 @@
     
     async function login() {
         let result = await login_user(username.value, password.value)
-        if(typeof result !== 'object')
+        if(result.message === "logged in")
             router.push({name:"MainPage"})
     }
 </script>
